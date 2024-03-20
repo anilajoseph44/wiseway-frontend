@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:wise_way/pages/firstpage.dart';
+import 'package:wise_way/pages/welcome.dart';
 
 void main() {
   runApp(const WiseWay());
@@ -11,7 +11,7 @@ class WiseWay extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: FirstPage(),
+      home: WelcomePage(),
     );
   }
 }
