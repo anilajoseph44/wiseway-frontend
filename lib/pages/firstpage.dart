@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:wise_way/pages/homepage.dart';
+import 'package:wise_way/pages/signup.dart';
 import 'package:wise_way/services/userservice.dart';
 
 class FirstPage extends StatefulWidget {
@@ -41,15 +42,7 @@ class _FirstPageState extends State<FirstPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            colors: [
-              Colors.blueAccent.withOpacity(0.80),
-              Colors.blueAccent.withOpacity(0.7),
-              Colors.blueAccent.withOpacity(0.6)
-            ],
-          ),
-        ),
+        color: Colors.black,
         child: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.all(20.0),
@@ -60,9 +53,9 @@ class _FirstPageState extends State<FirstPage> {
                 Image.asset("assets/wisewaylogo.png"),
                 Text(
                   "Explore the world effortlessly with WiseWay",
-                  style: TextStyle(color: Colors.black.withOpacity(0.6)),
+                  style: TextStyle(color: Colors.white.withOpacity(0.6)),
                 ),
-                Text("Start planning your next adventure today!",style: TextStyle(color: Colors.black.withOpacity(0.6))),
+                Text("Start planning your next adventure today!",style: TextStyle(color: Colors.white.withOpacity(0.6))),
                 SizedBox(height: 30,),
                 TextField(
                   controller: email,
@@ -125,7 +118,7 @@ class _FirstPageState extends State<FirstPage> {
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
                       foregroundColor: Colors.white,
-                      backgroundColor: Colors.blueAccent.withOpacity(0.99),
+                      backgroundColor: Colors.green.shade900,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(4),
                       ),
@@ -138,15 +131,16 @@ class _FirstPageState extends State<FirstPage> {
                 Divider(color: Colors.grey,
                 thickness: 2,),
                 SizedBox(height: 15,),
-                Text("Unlock Adventure with Ease",style: TextStyle(color: Colors.black.withOpacity(0.7),fontSize: 20),),
+                Text("Unlock Adventure with Ease",style: TextStyle(color: Colors.white.withOpacity(0.7),fontSize: 20),),
                 SizedBox(height: 25,),
                 Row(
                   children: [
                     SizedBox(width: 83,),
-                    Text("New user? ",style: TextStyle(color: Colors.black.withOpacity(0.40),fontSize: 18),),
+                    Text("New user? ",style: TextStyle(color: Colors.white.withOpacity(0.40),fontSize: 18),),
                     TextButton(onPressed: ()
                         {
-                        }, child: Text("Sign Up",style: TextStyle(color: Colors.blueAccent,fontWeight: FontWeight.bold,fontSize: 22),))
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=>SignUp()));
+                        }, child: Text("Sign Up",style: TextStyle(color: Colors.green.shade900,fontWeight: FontWeight.bold,fontSize: 22),))
                   ],
                 ),
                 SizedBox(height: 100,),
