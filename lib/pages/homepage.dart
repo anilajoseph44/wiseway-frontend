@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wise_way/pages/account.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -9,9 +10,10 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final List<Widget> pages=[       //creating a list to load pages according to index
-    CreatePost(),
-    ViewPost(),
-    ViewPost()
+    AccountSettings(),
+    AccountSettings(),
+    AccountSettings(),
+    AccountSettings()
   ];
 
   int currentIndex=0;
@@ -32,16 +34,20 @@ class _HomePageState extends State<HomePage> {
           },
           items: [
             BottomNavigationBarItem(
-                icon: Icon(Icons.add),
-                label: "Add Post"
+                icon: Icon(Icons.group,color: Colors.grey,size: 34,),
+                label: "Plans"
             ),
             BottomNavigationBarItem(
-                icon: Icon(Icons.grid_view_outlined),
-                label: "View all"
+                icon: Icon(Icons.home,color: Colors.grey,size: 34,),
+                label: "Explore"
             ),
             BottomNavigationBarItem(
-                icon: Icon(Icons.view_agenda_outlined),
-                label: "View my post")
+                icon: Icon(Icons.search,color: Colors.grey,size: 34,),
+                label: "Search"),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.settings,color: Colors.grey,size: 34,),
+                label: "Account"
+            ),
           ],
         ),
       ),
