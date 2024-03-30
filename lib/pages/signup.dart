@@ -1,6 +1,7 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:wise_way/pages/firstpage.dart';
 import 'package:wise_way/pages/signup_confirmation.dart';
 import 'package:wise_way/services/userservice.dart';
 
@@ -151,6 +152,22 @@ class _SignUpState extends State<SignUp> {
                         child: Text('Sign Up'),
                       ),
                     ),
+                    SizedBox(height: 16,),
+                    SizedBox(
+                      width: 180,
+                      child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.green.shade900,
+                          foregroundColor: Colors.white,
+                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                        ),
+                        onPressed: () {
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => FirstPage()));
+                        },
+                        child: Text('Login'),
+                      ),
+                    ),
+
                   ],
                 ),
               ),
