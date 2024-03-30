@@ -35,7 +35,7 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
-  flutter_svg: ^2.0.9
+  flutter_svg: ^2.0.10+1
   http: ^1.2.0
   shared_preferences: ^2.2.2
 
@@ -64,14 +64,14 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/wisewaylogo.png
-    - assets/signup_image.png
-    - assets/wiseway_ai_logo.png
     - assets/wiseway_cover.jpg
     - assets/munnar.jpg
     - assets/signup_photo.jpg
     - assets/final_logo.png
     - assets/logooo.png
     - assets/screenshotlogo.png
+    - assets/Girl-riding-bicycle.svg
+    - assets/screenshotlogo-removebg.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

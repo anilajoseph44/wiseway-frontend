@@ -88,4 +88,59 @@ class UserApiService
     }
   }
 
+
+
+  Future<dynamic> changePassword(String email, String oldPassword, String newPassword) async {
+    var client = http.Client();
+    var apiUrl = Uri.parse("http://192.168.191.62:3002/api/users/changepassword");
+    try {
+      var response = await client.post(
+        apiUrl,
+        headers: <String, String>{
+          "Content-Type": "application/json; charset=UTF-8"
+        },
+        body: jsonEncode(<String, String>{
+          "email": email,
+          "oldpassword": oldPassword,
+          "newpassword": newPassword
+        }),
+      );
+      if (response.statusCode == 200) {
+        return json.decode(response.body);
+      } else {
+        throw Exception("Failed to send data");
+      }
+    } catch (error) {
+      throw Exception("Error: $error");
+    } finally {
+      client.close();
+    }
+  }
+
+  Future<dynamic> deleteAccount(String email, String password) async {
+    var client = http.Client();
+    var apiUrl = Uri.parse("http://192.168.191.62:3002/api/users/deleteaccount");
+    try {
+      var response = await client.post(
+        apiUrl,
+        headers: <String, String>{
+          "Content-Type": "application/json; charset=UTF-8"
+        },
+        body: jsonEncode(<String, String>{
+          "email": email,
+          "password": password,
+        }),
+      );
+      if (response.statusCode == 200) {
+        return json.decode(response.body);
+      } else {
+        throw Exception("Failed to send data");
+      }
+    } catch (error) {
+      throw Exception("Error: $error");
+    } finally {
+      client.close();
+    }
+  }
+
 }

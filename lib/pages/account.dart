@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:wise_way/pages/changeusername.dart';
+import 'package:wise_way/pages/deleteaccount.dart';
+import 'package:wise_way/pages/password_reset.dart';
+import 'package:wise_way/pages/supportpage.dart';
 import 'package:wise_way/services/userservice.dart';
 
 class AccountSettings extends StatefulWidget {
@@ -126,6 +129,8 @@ class _AccountSettingsState extends State<AccountSettings> {
                   padding: EdgeInsets.only(left: 20),
                   child: TextButton.icon(
                     onPressed: () {
+                      
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>ChangePassword()));
                       // Action for changing password
                     },
                     icon: Icon(Icons.lock, color: Colors.green.shade900),
@@ -138,6 +143,8 @@ class _AccountSettingsState extends State<AccountSettings> {
                 Divider(),
                 TextButton.icon(
                   onPressed: () {
+                    
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>SupportPage()));
                     // Action for support
                   },
                   icon: Icon(Icons.support, color: Colors.green.shade900),
@@ -151,6 +158,7 @@ class _AccountSettingsState extends State<AccountSettings> {
                   padding: EdgeInsets.only(left: 20),
                   child: TextButton.icon(
                     onPressed: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>DeleteAccount()));
                       // Action for deleting account
                     },
                     icon: Icon(Icons.delete, color: Colors.green.shade900),

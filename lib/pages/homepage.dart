@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:wise_way/pages/account.dart';
+import 'package:wise_way/pages/plan/plan_home.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -11,7 +12,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   final List<Widget> pages=[       //creating a list to load pages according to index
     AccountSettings(),
-    AccountSettings(),
+    CreatePlan(),
     AccountSettings(),
     AccountSettings()
   ];
