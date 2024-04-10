@@ -35,8 +35,7 @@ class _SignupConfirmationState extends State<SignupConfirmation> {
                   // Navigate to login page
                 },
                 style: ElevatedButton.styleFrom(
-                  foregroundColor: Colors.white,
-                  primary: Colors.green.shade900,
+                  foregroundColor: Colors.white, backgroundColor: Colors.green.shade900,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(4),
                   ),

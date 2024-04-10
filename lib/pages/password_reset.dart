@@ -127,7 +127,7 @@ class _ChangePasswordState extends State<ChangePassword> {
                 SizedBox(height: 20),
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    primary: _isButtonEnabled ? Colors.green[900] : null,
+                    backgroundColor: _isButtonEnabled ? Colors.green[900] : null,
                     foregroundColor: Colors.white,
                   ),
                   onPressed: _isButtonEnabled ? changePassword : null,

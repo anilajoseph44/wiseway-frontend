@@ -49,8 +49,7 @@ class _CreatePlanState extends State<CreatePlan> {
                       icon: Icon(Icons.add),
                       label: Text('Create Plan'),
                       style: ElevatedButton.styleFrom(
-                        primary: Colors.green.shade900,
-                        onPrimary: Colors.white,
+                        foregroundColor: Colors.white, backgroundColor: Colors.green.shade900,
                         padding: EdgeInsets.symmetric(vertical: 15, horizontal: 15),
                         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
                       ),
