@@ -1,15 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:wise_way/pages/plan/input_page3.dart';
 
-class InputPage2 extends StatefulWidget {
+class InputPage2 extends StatefulWidget
+{
+
   const InputPage2({Key? key});
 
   @override
-  State<InputPage2> createState() => _InputPageState();
+  State<InputPage2> createState() => _InputPage2State();
+
 }
 
-class _InputPageState extends State<InputPage2> {
+class _InputPage2State extends State<InputPage2> {
+  bool _isButtonEnabled = false;
+  TextEditingController _startingPointController = TextEditingController();
+  TextEditingController _destinationController = TextEditingController();
+
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context)
+  {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
@@ -30,6 +39,12 @@ class _InputPageState extends State<InputPage2> {
                 ),
                 SizedBox(height: 10),
                 TextField(
+                  controller: _startingPointController,
+                  onChanged: (value) {
+                    setState(() {
+                      _isButtonEnabled = value.isNotEmpty && _destinationController.text.isNotEmpty;
+                    });
+                  },
                   decoration: InputDecoration(
                     border: OutlineInputBorder(),
                     labelText: "Starting Point",
@@ -37,10 +52,40 @@ class _InputPageState extends State<InputPage2> {
                 ),
                 SizedBox(height: 10),
                 TextField(
+                  controller: _destinationController,
+                  onChanged: (value) {
+                    setState(() {
+                      _isButtonEnabled = value.isNotEmpty && _startingPointController.text.isNotEmpty;
+                    });
+                  },
                   decoration: InputDecoration(
                     border: OutlineInputBorder(),
                     labelText: "Destination",
                   ),
+                ),
+                SizedBox(height: 20),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Expanded(child: Container()),
+                    IconButton(
+                      onPressed: _isButtonEnabled
+                          ? () {
+                        
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>InputPage3()));
+                        // Handle button press
+                      }
+                          : null,
+                      icon: Container(
+                        padding: EdgeInsets.all(8),
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: _isButtonEnabled ? Colors.green.shade900 : Colors.grey,
+                        ),
+                        child: Icon(Icons.arrow_forward, size: 25, color: Colors.white),
+                      ),
+                    ),
+                  ],
                 ),
               ],
             ),

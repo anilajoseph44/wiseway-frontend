@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:http/http.dart' as http;
 import 'package:wise_way/models/usermodel.dart';
 
@@ -9,7 +8,7 @@ class UserApiService
   Future<dynamic>SendUserLogin(String email,String password)async
   {
     var client=http.Client();
-    var apiurl=Uri.parse("http://192.168.191.62:3002/api/users/signin");
+    var apiurl=Uri.parse("http://10.0.14.88:3002/api/users/signin");
     var response=await client.post(apiurl,
         headers: <String,String>{
           "Content-Type":"application/json; charset=UTF-8"
@@ -32,7 +31,7 @@ class UserApiService
   Future<dynamic>SendData(String name,String email,String password,String confirmPassword)async
   {
     var client=http.Client();
-    var apiurl=Uri.parse("http://192.168.191.62:3002/api/users/signup");
+    var apiurl=Uri.parse("http://10.0.14.88:3002/api/users/signup");
     var response=await client.post(apiurl,
         headers: <String,String>{
           "Content-Type":"application/json; charset=UTF-8"
@@ -63,7 +62,7 @@ class UserApiService
   Future<dynamic>SendUsername(String email,String name)async
   {
     var client=http.Client();
-    var apiurl=Uri.parse("http://192.168.191.62:3002/api/users/changeusername");
+    var apiurl=Uri.parse("http://10.0.14.88:3002/api/users/changeusername");
     var response=await client.post(apiurl,
         headers: <String,String>{
           "Content-Type":"application/json; charset=UTF-8"
@@ -77,10 +76,7 @@ class UserApiService
     );
     if(response.statusCode==200)
     {
-
       return json.decode(response.body);
-
-
     }
     else
     {
@@ -92,7 +88,7 @@ class UserApiService
 
   Future<dynamic> changePassword(String email, String oldPassword, String newPassword) async {
     var client = http.Client();
-    var apiUrl = Uri.parse("http://192.168.191.62:3002/api/users/changepassword");
+    var apiUrl = Uri.parse("http://10.0.14.88:3002/api/users/changepassword");
     try {
       var response = await client.post(
         apiUrl,
@@ -119,7 +115,7 @@ class UserApiService
 
   Future<dynamic> deleteAccount(String email, String password) async {
     var client = http.Client();
-    var apiUrl = Uri.parse("http://192.168.191.62:3002/api/users/deleteaccount");
+    var apiUrl = Uri.parse("http://10.0.14.88:3002/api/users/deleteaccount");
     try {
       var response = await client.post(
         apiUrl,
